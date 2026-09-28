@@ -1,0 +1,6 @@
+StudentId,studentName,fatherName,motherName,contactNo,fee,currency,country,city,abc_classId
+1001,Sanjana,Rajesh,Lakshmi,9876543210,50000,INR,India,Bangalore,11
+1002,Rahul,Suresh,Priya,9876543211,45000,INR,India,Chennai,12
+1003,Ananya,Kumar,Deepa,9876543212,55000,INR,India,Hyderabad,13
+1004,Vikram,Ramesh,Meena,9876543213,60000,INR,India,Mumbai,14
+1005,Neha,Arun,Kavitha,9876543214,48000,INR,India,Pune,15

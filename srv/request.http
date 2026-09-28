@@ -1,0 +1,224 @@
+###Read the employee data
+ http://localhost:4004/odata/v4/catalog/EmployeeSrv
+
+###
+POST http://localhost:4004/odata/v4/catalog/createEmployee
+Content-Type: application/json
+
+{
+    "Currency_code":"USD",
+    "ID":"2a5776ec-e711-4c11-a92a-2da5b46c40a6",
+    "accountNumber":null,
+    "bankId":null,
+    "bankName":null,
+    "email":null,
+    "gender":"F",
+    "language":"E",
+    "loginName":"Sanjana",
+    "nameFirst":"Sanj",
+    "nameInitials":null,
+    "nameLast":"Rak",
+    "nameMidde":null,
+    "phoneNumber":"(+1) 9898989897",
+    "salaryAmount":"45000.00"
+}
+
+###
+POST http://localhost:4004/odata/v4/catalog/updateEmployee
+Content-Type: application/json
+
+{
+    "ID":"2a5776ec-e711-4c11-a92a-2da5b46c40a2",
+    "salaryAmount":"75000.00",
+    "Currency_code":"USD"
+}
+
+###
+POST http://localhost:4004/odata/v4/catalog/createAddress
+Content-Type: application/json
+
+{
+    "ADDRESS_TYPE":"HOME",
+    "BUILDING":null,
+    "CITY":null,"COUNTRY":null,
+    "LATITUDE":"12.9717",
+    "LONGITUDE":"77.5943",
+    "NODE_KEY":"550e8400-e29b-41d4-a716-446655440000",
+    "POSTAL_CODE":null,
+    "STREET":null,
+    "VAL_END":"2026-12-30",
+    "VAL_START":"2024-01-02"
+}
+
+
+###
+POST http://localhost:4004/odata/v4/catalog/updateAddress
+Content-Type: application/json
+
+{
+    "NODE_KEY":"550e8400-e29b-41d4-a716-446655440000",
+    "CITY":"HYD"
+}
+
+###
+POST http://localhost:4004/odata/v4/catalog/ProductSrv
+Content-Type: application/json
+
+{
+    "CATEGORY":"ELECTRONICS",
+  "CURRENCY_CODE": "USD",
+  "DEPTH": 25.50,
+  "DESCRIPTION": "Wireless Bluetooth Speaker",
+  "DIM_UNIT": "CM",
+  "HEIGHT": 15.75,
+  "MEASURE_UNIT": "EA",
+  "NODE_KEY": "550e8400-e29b-41d4-a716-446655440001",
+  "PRICE": 149.99,
+  "PRODUCT_ID": "PRD10001",
+  "TAX_TARRIF_CODE": 1234,
+  "TYPE_CODE": "FG",
+  "WEIGHT_MEASURE": 1.25,
+  "WEIGHT_UNIT": "KG",
+  "WIDTH": 10.00
+}
+
+###
+POST http://localhost:4004/odata/v4/catalog/deleteEmployee
+Content-Type: application/json
+
+{
+    "ID":"2a5776ec-e711-4c11-a92a-2da5b46c40a2"
+}
+
+
+###
+http://localhost:4004/odata/v4/catalog
+
+
+###
+http://localhost:4004/odata/v4/catalog/ProductSrv
+
+
+###
+http://localhost:4004/odata/v4/catalog/ProductSrv/$count
+
+###
+http://localhost:4004/odata/v4/catalog/ProductSrv?$top=10
+
+###
+http://localhost:4004/odata/v4/catalog/ProductSrv?$top=10&$skip=10
+
+
+###
+http://localhost:4004/odata/v4/catalog/ProductSrv?$filter=CATEGORY eq 'Notebooks'&DIM_UNIT eq 'CM
+
+
+###
+http://localhost:4004/odata/v4/catalog/ProductSrv?$select=PRODUCT_ID,DESCRIPTION,CATEGORY,PRICE
+
+
+###
+http://localhost:4004/odata/v4/catalog/ProductSrv?$orderby=PRODUCT_ID desc
+
+
+###
+http://localhost:4004/odata/v4/catalog/ProductSrv('74867AD200E41EDBA5D8B06B26F8C052')/PRODUCT_ID
+
+
+
+###
+http://localhost:4004/odata/v4/catalog/ProductSrv('74867AD200E41EDBA5D8B06B26F8C052')/PRODUCT_ID/$value
+
+
+###
+http://localhost:4004/odata/v4/catalog/PurchaseOrderSrv?$expand=Items
+
+###
+PUT http://localhost:4004/odata/v4/catalog/EmployeeSrv/02BD2137-0890-1EEA-A6C2-BB55C19A87FB
+Content-Type: application/json
+
+{
+    "salaryAmount":1500000.00,
+    "Currency_code":"USD"
+}
+
+###
+GET http://localhost:4004/odata/v4/catalog/getHighestSalariedEmployees()
+
+
+###
+GET http://localhost:4004/odata/v4/catalog/getHighestPriceProducts()
+
+
+###
+POST http://localhost:4004/odata/v4/catalog/EmployeeSrv
+Content-Type: application/json
+
+{
+    "Currency_code":"USD",
+    "ID":"2a5776ec-e711-4c11-a92a-2da5b46c40a6",
+    "accountNumber":null,
+    "bankId":null,
+    "bankName":null,
+    "email":null,
+    "gender":"F",
+    "language":"E",
+    "loginName":"Sanjana",
+    "nameFirst":"Sanj",
+    "nameInitials":null,
+    "nameLast":"Rak",
+    "nameMidde":null,
+    "phoneNumber":"(+1) 9898989897",
+    "salaryAmount":"45000.00"
+}
+
+###
+GET http://localhost:4004/odata/v4/catalog/EmployeeSrv
+
+
+###
+GET http://localhost:4004/odata/v4/catalog/PurchaseOrderSrv
+
+
+###
+POST http://localhost:4004/odata/v4/catalog/PurchaseOrderSrv/74867AD200E41EDBA5D8B0C98DC2A052/discountPrice
+Content-Type: application/json
+
+{}
+
+
+###
+GET http://localhost:4004/odata/v4/catalog/PurchaseOrderSrv/74867AD200E41EDBA5D8B0C98DC2A052/largestOrder()
+
+
+###
+GET http://localhost:4004/odata/v4/catalog/ProductSrv
+
+###
+POST http://localhost:4004/odata/v4/catalog/ProductSrv/550e8400-e29b-41d4-a716-446655440000/increasePrice
+Content-Type: application/json
+
+{}
+
+
+###
+GET http://localhost:4004/odata/v4/catalog/ProductSrv/550e8400-e29b-41d4-a716-446655440000/getTopProducts()
+
+
+
+###
+http://localhost:4004/odata/v4/catalog/EmployeeSrv
+
+###
+POST http://localhost:4004/odata/v4/catalog/EmployeeSrv/02BD2137-0890-1EEA-A6C2-BB55C19787FB/increaseSalary
+Content-Type: application/json
+
+{}
+
+###
+GET http://localhost:4004/odata/v4/catalog/EmployeeSrv/02BD2137-0890-1EEA-A6C2-BB55C19787FB/getTopEmployees()
+
+
+
+###
+GET http://localhost:4004/odata/v4/catalog/getUtilities()
